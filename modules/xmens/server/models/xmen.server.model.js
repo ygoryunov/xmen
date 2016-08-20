@@ -21,6 +21,10 @@ var XmenSchema = new Schema({
     default: '',
     trim: true
   },
+  team_id: {
+    type: Schema.ObjectId,
+    ref: 'Team'
+  },
   created: {
     type: Date,
     default: Date.now

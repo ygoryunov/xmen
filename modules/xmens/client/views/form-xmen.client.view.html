@@ -17,6 +17,15 @@
           <input name="superpower" type="text" ng-model="vm.xmen.superpower" id="superpower" class="form-control" placeholder="Super Power">
         </div>
         <div class="form-group">
+          <label class="control-label" for="team_id">Team</label>
+          <select name="team_id" id="team_id" class="form-control"
+            ng-model="vm.xmen.team_id" ng-options="team.name for team in vm.teams">
+          </select>
+          <div ng-messages="vm.form.albumForm.artist.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Album artist is required.</p>
+          </div>
+        </div>
+        <div class="form-group">
           <button type="submit" class="btn btn-default">{{vm.xmen._id ? 'Update' : 'Create'}}</button>
         </div>
         <div ng-show="vm.error" class="text-danger">

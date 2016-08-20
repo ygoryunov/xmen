@@ -6,13 +6,14 @@
     .module('xmens')
     .controller('XmensController', XmensController);
 
-  XmensController.$inject = ['$scope', '$state', 'Authentication', 'xmenResolve'];
+  XmensController.$inject = ['$scope', '$state', 'Authentication', 'xmenResolve', 'TeamsService'];
 
-  function XmensController ($scope, $state, Authentication, xmen) {
+  function XmensController ($scope, $state, Authentication, xmen, TeamsService) {
     var vm = this;
 
     vm.authentication = Authentication;
     vm.xmen = xmen;
+    vm.teams = TeamsService.query();
     vm.error = null;
     vm.form = {};
     vm.remove = remove;
