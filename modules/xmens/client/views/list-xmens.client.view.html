@@ -14,6 +14,7 @@
         <span data-ng-if="!xmen.user">Deleted User</span>
       </small>
       <h4 class="list-group-item-heading" data-ng-bind="xmen.name"></h4>
+      <h5 class="list-group-item-heading" data-ng-bind="xmen.superpower"></h5>
     </a>
   </div>
   <div class="alert alert-warning text-center" data-ng-if="vm.xmens.$resolved && !vm.xmens.length">

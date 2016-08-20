@@ -16,6 +16,11 @@ var XmenSchema = new Schema({
     required: 'Please fill Xmen name',
     trim: true
   },
+  superpower: {
+    type: String,
+    default: '',
+    trim: true
+  },
   created: {
     type: Date,
     default: Date.now
