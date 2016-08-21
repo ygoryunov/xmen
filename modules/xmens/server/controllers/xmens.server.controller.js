@@ -103,7 +103,7 @@ exports.xmenByID = function(req, res, next, id) {
     });
   }
 
-  Xmen.findById(id).populate('user', 'displayName').exec(function (err, xmen) {
+  Xmen.findById(id).populate('user', 'displayName').populate('team').exec(function (err, xmen) {
     if (err) {
       return next(err);
     } else if (!xmen) {
@@ -111,6 +111,7 @@ exports.xmenByID = function(req, res, next, id) {
         message: 'No Xmen with that identifier has been found'
       });
     }
+    console.log(xmen);
     req.xmen = xmen;
     next();
   });

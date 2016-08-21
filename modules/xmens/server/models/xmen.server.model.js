@@ -21,7 +21,7 @@ var XmenSchema = new Schema({
     default: '',
     trim: true
   },
-  team_id: {
+  team: {
     type: Schema.ObjectId,
     ref: 'Team'
   },
