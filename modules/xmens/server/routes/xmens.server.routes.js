@@ -8,16 +8,16 @@ var xmensPolicy = require('../policies/xmens.server.policy'),
 
 module.exports = function(app) {
   // Xmens Routes
-  app.route('/api/xmens').all(xmensPolicy.isAllowed)
+  app.route('/api/xmens/crud').all(xmensPolicy.isAllowed)
     .get(xmens.list)
     .post(xmens.create);
 
-  app.route('/api/xmens/:xmenId').all(xmensPolicy.isAllowed)
+  app.route('/api/xmens/crud/:xmenId').all(xmensPolicy.isAllowed)
     .get(xmens.read)
     .put(xmens.update)
     .delete(xmens.delete);
 
-  app.route('/api/xmenscount').all(xmensPolicy.isAllowed)
+  app.route('/api/xmens/count').all(xmensPolicy.isAllowed)
     .get(xmens.count);
 
   // Finish by binding the Xmen middleware

@@ -15,37 +15,37 @@ exports.invokeRolesPolicies = function () {
   acl.allow([{
     roles: ['admin'],
     allows: [{
-      resources: '/api/xmens',
+      resources: '/api/xmens/crud',
       permissions: '*'
     }, {
-      resources: '/api/xmens/:xmenId',
+      resources: '/api/xmens/crud/:xmenId',
       permissions: '*'
     }, {
-      resources: '/api/xmenscount',
+      resources: '/api/xmens/count',
       permissions: '*'
     }]
   }, {
     roles: ['user'],
     allows: [{
-      resources: '/api/xmens',
+      resources: '/api/xmens/crud',
       permissions: ['get', 'post']
     }, {
-      resources: '/api/xmens/:xmenId',
+      resources: '/api/xmens/crud/:xmenId',
       permissions: ['get']
     }, {
-      resources: '/api/xmenscount',
+      resources: '/api/xmens/count',
       permissions: ['get']
     }]
   }, {
     roles: ['guest'],
     allows: [{
-      resources: '/api/xmens',
+      resources: '/api/xmens/crud',
       permissions: ['get']
     }, {
-      resources: '/api/xmens/:xmenId',
+      resources: '/api/xmens/crud/:xmenId',
       permissions: ['get']
     }, {
-      resources: '/api/xmenscount',
+      resources: '/api/xmens/count',
       permissions: ['get']
     }]
   }]);

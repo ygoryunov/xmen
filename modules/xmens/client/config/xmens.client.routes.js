@@ -11,11 +11,11 @@
     $stateProvider
       .state('xmens', {
         abstract: true,
-        url: '/xmens',
+        url: '/xmens/crud',
         template: '<ui-view/>'
       })
       .state('xmens.list', {
-        url: '',
+        url: '/',
         templateUrl: 'modules/xmens/client/views/list-xmens.client.view.html',
         controller: 'XmensListController',
         controllerAs: 'vm',

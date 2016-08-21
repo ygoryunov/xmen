@@ -9,7 +9,7 @@
   XmensService.$inject = ['$resource'];
 
   function XmensService($resource) {
-    return $resource('api/xmens/:xmenId', {
+    return $resource('api/xmens/crud/:xmenId', {
       xmenId: '@_id'
     }, {
       update: {
