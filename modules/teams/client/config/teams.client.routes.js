@@ -11,7 +11,7 @@
     $stateProvider
       .state('teams', {
         abstract: true,
-        url: '/teams',
+        url: '/teams/crud',
         template: '<ui-view/>'
       })
       .state('teams.list', {

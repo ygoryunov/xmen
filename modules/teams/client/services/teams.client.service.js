@@ -9,7 +9,7 @@
   TeamsService.$inject = ['$resource'];
 
   function TeamsService($resource) {
-    return $resource('api/teams/:teamId', {
+    return $resource('api/teams/crud/:teamId', {
       teamId: '@_id'
     }, {
       update: {

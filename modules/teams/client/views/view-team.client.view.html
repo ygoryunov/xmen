@@ -4,6 +4,12 @@
   </div>
   <div class="pull-right"
        data-ng-show="vm.team.isCurrentUserOwner">
+
+    <a class="btn btn-primary"
+       data-ui-sref="teams.list">
+      <i class="glyphicon glyphicon-list"></i>
+    </a>
+
     <a class="btn btn-primary"
        data-ui-sref="teams.edit({ teamId: vm.team._id })">
       <i class="glyphicon glyphicon-edit"></i>
