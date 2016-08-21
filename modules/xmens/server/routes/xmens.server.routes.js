@@ -20,6 +20,12 @@ module.exports = function(app) {
   app.route('/api/xmens/count').all(xmensPolicy.isAllowed)
     .get(xmens.count);
 
+  app.route('/api/xmens/team/:teamId').all(xmensPolicy.isAllowed)
+    .get(xmens.listByTeam);
+
+
   // Finish by binding the Xmen middleware
   app.param('xmenId', xmens.xmenByID);
+  app.param('teamId', xmens.listByTeam);
+
 };

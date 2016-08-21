@@ -80,7 +80,7 @@ exports.delete = function(req, res) {
 /**
  * List of Xmens
  */
-exports.list = function(req, res) { 
+exports.list = function(req, res) {
   Xmen.find().sort('-created').populate('user', 'displayName').populate('team', 'name').exec(function(err, xmens) {
     if (err) {
       return res.status(400).send({
@@ -91,6 +91,29 @@ exports.list = function(req, res) {
     }
   });
 };
+
+/**
+ * List of Xmens by Team
+ */
+exports.listByTeam = function(req, res, next, id) { 
+
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(400).send({
+      message: 'Team is invalid'
+    });
+  }
+
+  Xmen.find({ 'team' : id }).sort('-created').populate('user', 'displayName').populate('team', 'name').exec(function(err, xmens) {
+    if (err) {
+      return res.status(400).send({
+        message: errorHandler.getErrorMessage(err)
+      });
+    } else {
+      res.jsonp(xmens);
+    }
+  });
+};
+
 
 /**
  * Xmen middleware
