@@ -17,6 +17,9 @@ module.exports = function(app) {
     .put(xmens.update)
     .delete(xmens.delete);
 
+  app.route('/api/xmenscount').all(xmensPolicy.isAllowed)
+    .get(xmens.count);
+
   // Finish by binding the Xmen middleware
   app.param('xmenId', xmens.xmenByID);
 };

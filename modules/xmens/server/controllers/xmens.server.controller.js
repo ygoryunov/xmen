@@ -115,3 +115,16 @@ exports.xmenByID = function(req, res, next, id) {
     next();
   });
 };
+
+exports.count = function(req, res) { 
+  Xmen.count().exec(function(err, count) {
+    if (err) {
+      return res.status(400).send({
+        message: errorHandler.getErrorMessage(err)
+      });
+    } else {
+      console.log(count);
+      res.jsonp(count);
+    }
+  });
+};

@@ -11,5 +11,8 @@
     var vm = this;
 
     vm.xmens = XmensService.query();
+    vm.test = 'bla-bla';
+    //vm.count = XmensService.count();
+    console.log(vm);
   }
 })();

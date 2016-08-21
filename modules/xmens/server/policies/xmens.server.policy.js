@@ -20,6 +20,9 @@ exports.invokeRolesPolicies = function () {
     }, {
       resources: '/api/xmens/:xmenId',
       permissions: '*'
+    }, {
+      resources: '/api/xmenscount',
+      permissions: '*'
     }]
   }, {
     roles: ['user'],
@@ -29,6 +32,9 @@ exports.invokeRolesPolicies = function () {
     }, {
       resources: '/api/xmens/:xmenId',
       permissions: ['get']
+    }, {
+      resources: '/api/xmenscount',
+      permissions: ['get']
     }]
   }, {
     roles: ['guest'],
@@ -37,6 +43,9 @@ exports.invokeRolesPolicies = function () {
       permissions: ['get']
     }, {
       resources: '/api/xmens/:xmenId',
+      permissions: ['get']
+    }, {
+      resources: '/api/xmenscount',
       permissions: ['get']
     }]
   }]);
