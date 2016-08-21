@@ -81,7 +81,7 @@ exports.delete = function(req, res) {
  * List of Xmens
  */
 exports.list = function(req, res) { 
-  Xmen.find().sort('-created').populate('user', 'displayName').exec(function(err, xmens) {
+  Xmen.find().sort('-created').populate('user', 'displayName').populate('team', 'name').exec(function(err, xmens) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
@@ -111,7 +111,6 @@ exports.xmenByID = function(req, res, next, id) {
         message: 'No Xmen with that identifier has been found'
       });
     }
-    console.log(xmen);
     req.xmen = xmen;
     next();
   });
