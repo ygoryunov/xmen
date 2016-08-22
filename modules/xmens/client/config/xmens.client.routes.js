@@ -9,12 +9,6 @@
 
   function routeConfig($stateProvider) {
     $stateProvider
-      .state('xmens-getinteam-xteam', {
-        url: '/xmens-getinteam-xteam',
-        templateUrl: 'modules/xmens/client/views/xmens-getinteam-xteam.client.view.html',
-        controller: 'XmensGetinteamXteamController',
-        controllerAs: 'vm'
-      })
       .state('xmens', {
         abstract: true,
         url: '/xmens',
