@@ -6,14 +6,14 @@
     .module('teams')
     .controller('TeamsController', TeamsController);
 
-  TeamsController.$inject = ['$scope', '$state', 'Authentication', 'teamResolve', 'XmensService'];
+  TeamsController.$inject = ['$scope', '$state', 'Authentication', 'teamResolve', 'xmensService'];
 
-  function TeamsController ($scope, $state, Authentication, team, XmensService) {
+  function TeamsController ($scope, $state, Authentication, team, xmensService) {
     var vm = this;
 
     vm.authentication = Authentication;
     vm.team = team;
-    vm.xmens = XmensService.query();
+    vm.xmens = xmensService.query({'xmenTeamId': team._id});
     console.log(vm.xmens);
     vm.error = null;
     vm.form = {};
