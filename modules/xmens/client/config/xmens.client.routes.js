@@ -76,4 +76,5 @@
   function newXmen(XmensService) {
     return new XmensService();
   }
+
 })();
