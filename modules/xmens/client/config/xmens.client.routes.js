@@ -11,11 +11,11 @@
     $stateProvider
       .state('xmens', {
         abstract: true,
-        url: '/xmens/crud',
+        url: '/xmens',
         template: '<ui-view/>'
       })
       .state('xmens.list', {
-        url: '/',
+        url: '/crud',
         templateUrl: 'modules/xmens/client/views/list-xmens.client.view.html',
         controller: 'XmensListController',
         controllerAs: 'vm',
@@ -24,7 +24,7 @@
         }
       })
       .state('xmens.create', {
-        url: '/create',
+        url: '/crud/create',
         templateUrl: 'modules/xmens/client/views/form-xmen.client.view.html',
         controller: 'XmensController',
         controllerAs: 'vm',
@@ -37,7 +37,7 @@
         }
       })
       .state('xmens.edit', {
-        url: '/:xmenId/edit',
+        url: '/crud/:xmenId/edit',
         templateUrl: 'modules/xmens/client/views/form-xmen.client.view.html',
         controller: 'XmensController',
         controllerAs: 'vm',
@@ -50,7 +50,7 @@
         }
       })
       .state('xmens.view', {
-        url: '/:xmenId',
+        url: '/crud/:xmenId',
         templateUrl: 'modules/xmens/client/views/view-xmen.client.view.html',
         controller: 'XmensController',
         controllerAs: 'vm',

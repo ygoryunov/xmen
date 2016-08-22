@@ -114,7 +114,6 @@ exports.listByTeam = function(req, res, next, id) {
   });
 };
 
-
 /**
  * Xmen middleware
  */
