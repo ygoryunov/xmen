@@ -14,7 +14,7 @@
     vm.authentication = Authentication;
     vm.team = team;
     vm.xmens = xmensService.query({ 'xmenTeamId': team._id });
-    console.log(vm.xmens);
+    //console.log(vm.xmens);
     vm.error = null;
     vm.form = {};
     vm.remove = remove;

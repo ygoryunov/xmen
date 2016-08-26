@@ -81,7 +81,6 @@ exports.delete = function(req, res) {
  * List of Xmens
  */
 exports.list = function(req, res) {
-  console.log(req.teamId);
   Xmen.find().sort('-created').populate('user', 'displayName').populate('team', 'name').exec(function(err, xmens) {
     if (err) {
       return res.status(400).send({

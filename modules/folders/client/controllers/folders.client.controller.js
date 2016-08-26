@@ -23,7 +23,7 @@
     vm.remove = remove;
     vm.save = save;
 
-    console.log(vm.folder);
+    //console.log(vm.folder);
     // Remove existing Folder
     function remove() {
       if (confirm('Are you sure you want to delete?')) {

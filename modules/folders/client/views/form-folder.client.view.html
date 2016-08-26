@@ -17,10 +17,9 @@
 
           <label class="control-label" for="parent">Parent</label>
           <input name="parent" type="text" ng-model="vm.folder.parent" id="parent" class="form-control" placeholder="Parent">
-          <button type="button" class="btn btn-default" data-ng-click="vm.createChild()">Create Child</button>
 
           <a class="btn btn-primary" data-ui-sref="folders.create({ pId: vm.folder._id })">
-            <i class="glyphicon glyphicon-new"></i>
+            Create child <i class="glyphicon glyphicon-chevron-right"></i>
           </a>
 
         </div>
