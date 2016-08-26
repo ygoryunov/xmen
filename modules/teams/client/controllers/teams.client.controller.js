@@ -10,10 +10,10 @@
 
   function TeamsController ($scope, $state, Authentication, team, xmensService) {
     var vm = this;
-
+    
     vm.authentication = Authentication;
     vm.team = team;
-    vm.xmens = xmensService.query({'xmenTeamId': team._id});
+    vm.xmens = xmensService.query({ 'xmenTeamId': team._id });
     console.log(vm.xmens);
     vm.error = null;
     vm.form = {};
